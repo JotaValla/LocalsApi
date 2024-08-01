@@ -2,7 +2,6 @@ package com.jotacode.restfullapi.service;
 
 import com.jotacode.restfullapi.data.entity.Local;
 import com.jotacode.restfullapi.error.LocalNotFoundException;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
