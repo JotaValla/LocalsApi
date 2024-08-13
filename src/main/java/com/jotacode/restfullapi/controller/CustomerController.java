@@ -47,4 +47,16 @@ public class CustomerController {
         return customerService.findCustomerByLastNameEqualsIgnoreCase(lastName).get();
     }
 
+    //get all customers by first name containing a string
+    @GetMapping("/customersContains/{name}")
+    public List<Customer> findAllCustomersByFirstNameContaining(@PathVariable String name) {
+        return customerService.findAllCustomersByFirstNameContaining(name);
+    }
+
+    //get all customers by the city name
+    @GetMapping("/customersByCity/{city}")
+    public List<Customer> findAllCustomersByCity(@PathVariable String city) {
+        return customerService.findAllCustomersByCity(city);
+    }
+
 }

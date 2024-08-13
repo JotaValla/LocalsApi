@@ -1,7 +1,9 @@
 package com.jotacode.restfullapi.service;
 
 import com.jotacode.restfullapi.data.entity.Local;
+import com.jotacode.restfullapi.data.entity.Order;
 import com.jotacode.restfullapi.data.repository.LocalRepository;
+import com.jotacode.restfullapi.data.repository.OrderRepository;
 import com.jotacode.restfullapi.error.LocalNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,29 @@ public class LocalServiceImpl implements LocalService {
     @Autowired
     LocalRepository localRepository;
 
+    @Autowired
+    OrderRepository orderRepository;
+
+    @Override
+    public Local createLocalWithOrder(Local local, List<Order> orders) {
+        local.setListaOrdenes(orders);
+        return localRepository.save(local);
+    }
+
+    @Override
+    public Local addOrdersToLocal(Long localId, List<Order> orders) throws LocalNotFoundException {
+        Local local = localRepository.findById(localId).orElseThrow(
+                () -> new LocalNotFoundException("Local not found with id: " + localId)
+        );
+
+        List<Order> ordersToAdd = local.getListaOrdenes();
+        ordersToAdd.addAll(orders);
+
+        local.setListaOrdenes(ordersToAdd);
+        return localRepository.save(local);
+    }
+
+
     @Override
     public List<Local> findAllLocals() {
         return localRepository.findAll();
@@ -23,6 +48,9 @@ public class LocalServiceImpl implements LocalService {
 
     @Override
     public Local saveLocal(Local local) {
+        if (local.getManager() == null) {
+            throw new IllegalArgumentException("Manager is mandatory");
+        }
         return localRepository.save(local);
     }
 

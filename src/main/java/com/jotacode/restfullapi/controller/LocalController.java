@@ -1,6 +1,7 @@
 package com.jotacode.restfullapi.controller;
 
 import com.jotacode.restfullapi.data.entity.Local;
+import com.jotacode.restfullapi.data.entity.Order;
 import com.jotacode.restfullapi.error.LocalNotFoundException;
 import com.jotacode.restfullapi.service.LocalService;
 import jakarta.validation.Valid;
@@ -20,6 +21,19 @@ public class LocalController {
     public List<Local> findAllLocals() {
         return localService.findAllLocals();
     }
+
+    //Insertar un local con una lista de ordenes
+    @PostMapping("/createLocalWithOrder")
+    public Local createLocalWithOrder(@Valid @RequestBody Local local, @RequestBody List<Order> orders) {
+        return localService.createLocalWithOrder(local, orders);
+    }
+
+    //Agregar ordenes a un local
+    @PostMapping("/addOrdersToLocal/{localId}")
+    public Local addOrdersToLocal(@PathVariable Long localId, @RequestBody List<Order> orders) throws LocalNotFoundException {
+        return localService.addOrdersToLocal(localId, orders);
+    }
+
 
     @PostMapping("/createLocal")
     public Local saveLocal(@Valid @RequestBody Local local) {

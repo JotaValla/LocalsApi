@@ -21,6 +21,8 @@ public interface CustomerService {
 
     Optional<Customer> findCustomerByLastNameEqualsIgnoreCase(String name) throws CustomerNotFoundException;
 
+    List<Customer> findAllCustomersByFirstNameContaining(String name);
 
+    List<Customer> findAllCustomersByCity(String city);
 
 }

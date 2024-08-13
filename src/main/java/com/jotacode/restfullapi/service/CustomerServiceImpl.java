@@ -40,6 +40,20 @@ public class CustomerServiceImpl implements CustomerService{
         if (Objects.nonNull(customer.getEmail()) && !"".equalsIgnoreCase(customer.getEmail())) {
             customerToUpdate.setEmail(customer.getEmail());
         }
+        //For address for city
+        if(Objects.nonNull(customer.getAddress().getCity()) && !"".equalsIgnoreCase(customer.getAddress().getCity())){
+            customerToUpdate.getAddress().setCity(customer.getAddress().getCity());
+        }
+        //main street
+        if(Objects.nonNull(customer.getAddress().getMainStreet()) && !"".equalsIgnoreCase(customer.getAddress().getMainStreet())){
+            customerToUpdate.getAddress().setMainStreet(customer.getAddress().getMainStreet());
+        }
+        //second street
+        if(Objects.nonNull(customer.getAddress().getSecondStreet()) && !"".equalsIgnoreCase(customer.getAddress().getSecondStreet())){
+            customerToUpdate.getAddress().setSecondStreet(customer.getAddress().getSecondStreet());
+        }
+
+
 
         return customerRepository.save(customerToUpdate);
     }
@@ -57,5 +71,15 @@ public class CustomerServiceImpl implements CustomerService{
     @Override
     public Optional<Customer> findCustomerByLastNameEqualsIgnoreCase(String name) throws CustomerNotFoundException {
         return customerRepository.findByLastNameEqualsIgnoreCase(name);
+    }
+
+    @Override
+    public List<Customer> findAllCustomersByFirstNameContaining(String name) {
+        return customerRepository.findAllByFirstNameContaining(name);
+    }
+
+    @Override
+    public List<Customer> findAllCustomersByCity(String city) {
+        return customerRepository.findAllByAddress_City(city);
     }
 }
