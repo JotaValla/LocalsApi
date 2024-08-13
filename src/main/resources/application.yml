@@ -84,3 +84,9 @@ spring:
   sql:
     init:
       platform: postgresql
+  springdoc:
+    api-docs:
+      enabled: 'true'
+    swagger-ui:
+      enabled: 'true'
+      path: /doc/swagger-ui.html

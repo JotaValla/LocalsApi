@@ -40,11 +40,6 @@ public class Customer {
     @Email(message = "Email is not valid")
     private String email;
 
-    //Atributos para direccions sin embebidos
-    /*private String customerCity;
-    private String customerMainStreet;
-    private String customerSecondStreet;*/
-
     @Embedded
     private Address address;
 

@@ -51,4 +51,15 @@ public class Local {
     @JoinColumn(name = "local_id", referencedColumnName = "local_id")
     private List<Order> listaOrdenes;
 
+    /**
+     * Un local puede tener varios clientes, y un cliente puede pertenecer a varios locales
+     */
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "local_customer_map",
+            joinColumns = @JoinColumn(name = "local_id", referencedColumnName = "local_id"),
+            inverseJoinColumns = @JoinColumn(name = "customer_id", referencedColumnName = "customer_id")
+    )
+    private List<Customer> customers;
+
 }
