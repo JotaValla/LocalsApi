@@ -1,0 +1,603 @@
+{
+	"info": {
+		"_postman_id": "d807c803-f71f-4cae-9801-605bf5f36b66",
+		"name": "Locals",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35286516"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Find all customers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find customer by the id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/customer/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find a customer by the lastname",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/customerByLastName/CoDE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customerByLastName",
+								"CoDE"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find a customer with names contains",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/customersContains/Jo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customersContains",
+								"Jo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find a list of customers by the city name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/customersByCity/Ambato",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customersByCity",
+								"Ambato"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post a new customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Joel\",\r\n    \"lastName\": \"Ramirez\",\r\n    \"email\": \"joel.ramirez@example.com\",\r\n    \"address\": {\r\n        \"city\": \"Ambato\",\r\n        \"mainStreet\": \"Avenida Cevallos2\",\r\n        \"secondStreet\": \"Calle Montalvo2\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/createCustomer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"createCustomer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a customer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"DoeModified\",\r\n    \"email\": \"johndoe@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/updateCustomer/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"updateCustomer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a customer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteCustomer/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteCustomer",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Locals",
+			"item": [
+				{
+					"name": "Find All Locals",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/locals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"locals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find local by the name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/localByName/ASD",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"localByName",
+								"ASD"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find local by the id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/localById/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"localById",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post a new Local",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"MusicWorld\",\r\n    \"floor\": \"Piso6\",\r\n    \"code\": \"MUS6\",\r\n    \"manager\": {\r\n        \"firstName\": \"David\",\r\n        \"lastName\": \"Lee\",\r\n        \"address\": {\r\n            \"city\": \"Montevideo\",\r\n            \"mainStreet\": \"Calle Colonia\",\r\n            \"secondStreet\": \"Avenida Uruguay\"\r\n        }\r\n    },\r\n    \"listaOrdenes\": [\r\n        {\r\n            \"description\": \"Curso de Guitarra Avanzada\",\r\n            \"price\": 27.99\r\n        },\r\n        {\r\n            \"description\": \"Taller de Composición Musical\",\r\n            \"price\": 32.00\r\n        }\r\n    ],\r\n    \"customers\": [\r\n        {\r\n            \"firstName\": \"Paula\",\r\n            \"lastName\": \"Cabrera\",\r\n            \"email\": \"paula.cabrera@example.com\",\r\n            \"address\": {\r\n                \"city\": \"Montevideo\",\r\n                \"mainStreet\": \"Calle Maldonado\",\r\n                \"secondStreet\": \"Avenida 18 de Julio\"\r\n            }\r\n        },\r\n        {\r\n            \"firstName\": \"Javier\",\r\n            \"lastName\": \"Santos\",\r\n            \"email\": \"javier.santos@example.com\",\r\n            \"address\": {\r\n                \"city\": \"Punta del Este\",\r\n                \"mainStreet\": \"Calle Gorlero\",\r\n                \"secondStreet\": \"Avenida Francia\"\r\n            }\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/createLocal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"createLocal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add orders to an especific local",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"description\": \"Corte\",\r\n        \"price\": 30.99\r\n    },\r\n    {\r\n        \"description\": \"Baño y corte\",\r\n        \"price\": 40.99\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/addOrdersToLocal/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"addOrdersToLocal",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a local",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"SalchiBabas\",\r\n    \"floor\": \"Piso15\",\r\n    \"code\": \"SB15\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/updateLocal/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"updateLocal",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a local",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteLocal/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteLocal",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Manager",
+			"item": [
+				{
+					"name": "Find all managers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/managers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"managers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find a manager with the id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/manager/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"manager",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post a new manager",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Juan\",\r\n    \"lastName\": \"Portuano\",\r\n    \"address\": {\r\n        \"city\": \"Valle\",\r\n        \"mainStreet\": \"Avenida Cevallos2\",\r\n        \"secondStreet\": \"Calle Montalvo2\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/createManager",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"createManager"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a manager",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Rafael\",\r\n    \"lastName\": \"Ramos\",\r\n    \"address\": {\r\n        \"city\": \"Quito\",\r\n        \"mainStreet\": \"Avenida Cevallos2\",\r\n        \"secondStreet\": \"Calle Montalvo2\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/updateManager/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"updateManager",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a manager",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteManager/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteManager",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Find All orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find order by the id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/orders/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save an order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Pizza completa vegetariana con oro\",\r\n    \"price\": 99.99\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update an order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": 5,\r\n    \"description\": \"Pizza completa vegetariana con oro y plata\",\r\n    \"price\": 99.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete an order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/orders/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
